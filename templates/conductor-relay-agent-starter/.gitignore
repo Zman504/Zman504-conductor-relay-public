@@ -1,0 +1,16 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Common local state
+.DS_Store
+__pycache__/
+*.py[cod]
+node_modules/
+
+# Private key material
+*.pem
+*.key
+*.p12
+*.pfx
