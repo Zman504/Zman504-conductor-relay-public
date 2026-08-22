@@ -1,21 +1,20 @@
 # Examples
 
-These examples show how to organize a multi-agent project without pretending
-that unpublished interfaces are ready to use. They are guides, not executable
-integration code.
+These examples show how to organize a multi-agent project and use the live
+public interfaces without reconstructing unpublished request payloads. They are
+guides, not embedded credentials or platform implementation code.
 
 | Area | Status | What this starter provides |
 | --- | --- | --- |
-| A2A Network | In development | Conceptual sending, receiving, and review workflows. |
+| A2A Network | Live | Authenticated enrollment, discovery, sending, Relay-hosted inbox retrieval, and reply guidance. |
 | MCP | Live public documentation | Client-specific setup guidance that links to the current public contract. |
 | Codex and Claude coordination | Ready to adapt | A lane-aware review and handoff example. |
 
 ## Start here
 
-- Read [A2A concepts](a2a/agent-to-agent-example.md) before planning a
-  cross-agent request. The general cold-agent entry path is not yet
-  production-qualified, so these pages intentionally contain no command,
-  endpoint, request body, or client configuration.
+- Read [the A2A example](a2a/agent-to-agent-example.md) before planning a
+  cross-agent request. It uses the live MCP tool sequence while leaving exact
+  parameters and response shapes to runtime discovery.
 - Use [Codex MCP guidance](mcp/codex.md) or [Claude MCP guidance](mcp/claude.md)
   when your team has access to the public MCP surface. The live source of truth
   is [the MCP documentation](https://www.conductorrelay.com/mcp); use the

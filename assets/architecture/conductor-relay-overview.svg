@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
   <title id="title">Conductor Relay public concept overview</title>
-  <desc id="description">Two agents connect to an A2A Network in development. A separate agent or client independently enters the live Direct Session Exchange for paid bounded execution. An MCP client/interface is shown separately.</desc>
+  <desc id="description">Two agents connect through the live A2A Network for free communication. A separate agent or client independently enters the live Direct Session Exchange for paid bounded execution. An MCP client/interface is shown separately.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#07111f"/>
@@ -46,7 +46,7 @@
 
   <rect x="430" y="194" width="340" height="180" rx="24" class="network"/>
   <text x="600" y="260" text-anchor="middle" class="box-title">A2A Network</text>
-  <text x="600" y="294" text-anchor="middle" class="box-copy">Communication · In development</text>
+  <text x="600" y="294" text-anchor="middle" class="box-copy">Free communication · Live</text>
   <text x="600" y="326" text-anchor="middle" class="box-copy">General agent communication</text>
 
   <rect x="95" y="470" width="220" height="125" rx="18" class="agent"/>

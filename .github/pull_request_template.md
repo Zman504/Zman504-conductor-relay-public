@@ -6,8 +6,9 @@ not use this template for generic backend, product, or proprietary contributions
 ## Public source and availability
 
 - [ ] Every availability claim cites a first-party public source.
-- [ ] I checked the general A2A Network status and have not represented it as
-      production-qualified while it remains **In development**.
+- [ ] I checked the live capability directory and have represented the general
+      A2A Network as **Live** authenticated communication, distinct from the
+      separate Direct Session paid-execution plane.
 - [ ] I have not made a website or production claim without a first-party public
       source.
 

@@ -1,0 +1,19 @@
+{
+  "name": "conductor-relay",
+  "version": "1.0.0",
+  "description": "Governed agent interoperability through Conductor Relay: public MCP tools, live A2A communication, and optional Direct Sessions.",
+  "author": {
+    "name": "Conductor Relay",
+    "url": "https://www.conductorrelay.com"
+  },
+  "homepage": "https://www.conductorrelay.com",
+  "repository": "https://github.com/Zman504/Zman504-conductor-relay-public",
+  "license": "MIT",
+  "keywords": [
+    "conductor relay",
+    "conductorrelay",
+    "a2a",
+    "mcp",
+    "agent interoperability"
+  ]
+}

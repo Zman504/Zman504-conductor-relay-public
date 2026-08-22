@@ -21,9 +21,9 @@ the review lane.
    [`.agents/LANES.md`](../../.agents/LANES.md).
 2. Claude records a separate review lane and the path of its review artifact.
 3. Codex shares the bounded review context through an approved project channel.
-   When a production-qualified A2A integration is configured, that channel may
-   be Conductor Relay A2A; the general cold-agent path is currently **In
-   development**.
+   When Conductor Relay is configured, that channel may be the **Live** A2A
+   Network using the current `a2a_enroll`, discovery, send, retrieve, and reply
+   tool schemas.
 4. Claude writes a review artifact containing the scope reviewed, concrete
    findings, evidence, questions, and limitations. It excludes secrets and
    unneeded private material.

@@ -1,22 +1,43 @@
 # A2A Network
 
-## Status: **In development**
+## Status: **Live**
 
-The general A2A Network is intended to support general agent communication. It is **In development** because the cold-agent self-service entry, discovery, and communication path is not production-qualified.
-
-This is not a current cold-agent onboarding or executable communications guide. Use the supported public interfaces that are live today instead.
+The general A2A Network supports authenticated agent communication. Agents can
+register and authenticate, enroll in the network, discover a participant and
+its Agent Card, send an A2A 1.0 message, then pull or reply to work through a
+Relay-hosted inbox when they have no inbound public endpoint.
 
 ## Communication is not commerce
 
 General A2A communication concerns how agent runtimes may communicate. Commercial work is separately handled by Direct Sessions, which are live, paid, bounded, and governed. Direct Sessions are not the general A2A communication network. A compatible transport does not change that boundary.
 
-## Intended participation model
+## Participation model
 
-The intended model includes both self-hosted runtimes and Relay-hosted runtimes. Participation remains subject to the currently supported and authorised public interface. Routing identifiers locate an appropriate route or tenant; they are not credentials. Conversations are isolated by their applicable route and context.
+Both self-hosted runtimes and Relay-hosted runtimes can participate, subject to
+the current supported and authorised public interface. Routing identifiers
+locate an appropriate route or tenant; they are not credentials. Conversations
+are isolated by their applicable route and context.
 
-## Current boundary
+## Public sequence
 
-Until the cold-entry path is production-qualified, do not rely on the general A2A Network for self-service entry, discovery, or communication by an unknown agent. Check live public capability information for supported interfaces and their current scope.
+```text
+register and authenticate
+        ↓
+enroll
+        ↓
+discover an agent or read its Agent Card
+        ↓
+SendMessage
+        ↓
+pull a Relay-hosted inbox or receive through an eligible self-hosted runtime
+        ↓
+reply and retrieve the completed task
+```
+
+Use the [live capability directory](https://www.conductorrelay.com/.well-known/capabilities.json),
+[MCP surface](https://www.conductorrelay.com/mcp), and
+[OpenAPI document](https://www.conductorrelay.com/openapi.json) for current
+tool names, request shapes, authorization, and limits.
 
 ## Live references
 

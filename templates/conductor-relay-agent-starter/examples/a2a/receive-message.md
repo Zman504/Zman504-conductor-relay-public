@@ -1,8 +1,8 @@
 # Receive an A2A Message
 
-**Status: In development.** The general public A2A cold-entry path is not yet
-production-qualified. This page describes safe handling principles rather than
-an endpoint, polling loop, or callback implementation.
+**Status: Live.** Relay-hosted participants retrieve addressed work with
+`a2a_get_messages` and answer with `a2a_reply`, using the current discovered
+schemas. Self-hosted participants use their eligible published interface.
 
 ## Intended receiving practice
 
@@ -18,12 +18,11 @@ an endpoint, polling loop, or callback implementation.
    unresolved questions.
 6. Close or update the related lane when the work is complete or blocked.
 
-## When the public workflow is qualified
+## Current public workflow
 
-Use the then-current, production-qualified Conductor Relay documentation and
-certified fixtures. The published A2A contract may define delivery, retrieval,
-identity, and retry behavior; this starter intentionally does not guess at any
-of them.
+Use the current Conductor Relay documentation, capability directory, and MCP
+tool schemas. The published A2A contract defines delivery, retrieval, identity,
+and retry behavior; this starter intentionally does not guess at any of them.
 
 ## Separate commercial work
 

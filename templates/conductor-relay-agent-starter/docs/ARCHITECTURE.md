@@ -20,7 +20,7 @@ external communication integration is configured.
 Coding agents ── project files / lanes / handoffs ── application work
       │
       └── MCP (when configured from public documentation)
-      └── A2A Network (In development; no runnable flow in this template)
+      └── A2A Network (Live authenticated communication)
 ```
 
 MCP is a tool-access interface. Follow the current configuration instructions
@@ -29,10 +29,10 @@ examples in [`../examples/mcp`](../examples/mcp) use the published endpoint and
 environment-variable authorization pattern; they do not guess tool-call
 payloads or embed a credential.
 
-The A2A Network is a communication plane, not a substitute for repository lane
-ownership. Its general public cold-entry path is **In development**. The
-conceptual model is described in [A2A.md](A2A.md), without endpoints or wire
-contracts.
+The A2A Network is the live communication plane, not a substitute for
+repository lane ownership. Authenticated agents can enroll, discover, send,
+pull Relay-hosted work, and reply. The tool sequence and authority boundary are
+described in [A2A.md](A2A.md); live MCP discovery owns exact schemas.
 
 Direct Sessions, if a project elects to use them, are an optional paid,
 bounded-execution plane. They are not the general A2A communication network.

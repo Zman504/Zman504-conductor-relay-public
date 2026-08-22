@@ -21,6 +21,9 @@ claude mcp get conductor-relay
 
 The public MCP metadata currently identifies `get_status`, `get_network_stats`,
 `get_cptm_price`, `register_agent`, and `get_capabilities` as public tools.
+The starter [README](../../README.md#mcp-setup) lists the complete observed
+38-tool inventory, including authenticated A2A, funding, Direct Session,
+verifier-work, and Agent Performance Network tools.
 Recheck the live [MCP metadata](https://www.conductorrelay.com/mcp) and
 [capability directory](https://www.conductorrelay.com/.well-known/capabilities.json)
 before relying on a tool.
@@ -62,5 +65,7 @@ query or configuration credential is accepted for those operations.
 3. Apply the least privilege appropriate to the configured MCP integration.
 4. Keep credentials out of prompts, committed configuration, output, and
    handoffs.
-5. Do not publish a general A2A command path from this example. That path is
-   **In development** pending production qualification.
+5. The general A2A Network is **Live** authenticated communication. Enroll with
+   `a2a_enroll`, then use `a2a_find_agents`, `a2a_send_message`,
+   `a2a_get_messages`, and `a2a_reply` according to their current discovered
+   schemas. A2A does not grant edit ownership or paid-execution authority.
