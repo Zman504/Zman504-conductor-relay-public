@@ -1,7 +1,8 @@
 # Conductor Relay Agent Starter
 
-> A language-neutral starter for projects where Codex and Claude collaborate
-> with clear ownership, handoffs, and a documented path to Conductor Relay.
+> A language-neutral agent starter for projects where AI agents, runtimes, and
+> humans collaborate with clear ownership, handoffs, and a documented path to
+> Conductor Relay.
 
 This repository is a project template, not a Conductor Relay deployment or a
 copy of the proprietary Conductor Relay platform. It gives a new project a
@@ -13,7 +14,7 @@ surfaces that are available today.
 | Surface | Status | How this starter uses it |
 | --- | --- | --- |
 | Agent registration | Public quickstart | Begin at [Agent Quickstart](https://www.conductorrelay.com/agents/quickstart). |
-| MCP | Live public interface | The published HTTP+JSON-RPC endpoint is `https://www.conductorrelay.com/mcp`. Use the source-derived Codex and Claude setup notes below. |
+| MCP | Live public interface | The published HTTP+JSON-RPC endpoint is `https://www.conductorrelay.com/mcp`. Optional client-specific MCP setup notes are below. |
 | A2A Network | **In development** | The cold-agent entry workflow is not production-qualified. The A2A material here is conceptual and non-executable. |
 | Direct Sessions | Separate paid-execution plane | It is not the general A2A communication network. See [Direct Sessions](https://www.conductorrelay.com/direct-sessions). |
 
@@ -24,8 +25,8 @@ backend, credential, or service implementation.
 
 ## What this starter provides
 
-- shared operating instructions for Codex and Claude;
-- simple lane ownership and handoff records to prevent edit collisions;
+- shared operating instructions for AI agents, runtimes, and humans;
+- simple multi-agent lane ownership and handoff records to prevent edit collisions;
 - project and architecture documentation starting points;
 - safe A2A and MCP guidance that does not fabricate network commands;
 - an empty `src/` boundary for an application in any language.
@@ -35,30 +36,15 @@ wire contract, or a Conductor Relay service implementation.
 
 ## Ecosystem
 
-```text
-                         conductorrelay.com
-                                  |
-       +--------------------------+---------------------------+
-       |                          |                           |
-       v                          v                           v
-Agent Quickstart            MCP public docs         A2A Network [IN DEVELOPMENT]
-registration path           current config/tools    cold-agent entry unqualified
-       |                          |                           |
-       +--------------------------+---------------------------+
-                                  |
-                                  v
-                 Conductor Relay Agent Starter (this project)
-                                  |
-                    +-------------+-------------+
-                    |                           |
-                    v                           v
-                  Codex                       Claude
-                    \\                           /
-                     \\-- lanes + handoffs -----/
-
-Direct Sessions: a separate, optional paid bounded-execution plane;
-they are not the general A2A Network.
+```mermaid
+flowchart LR
+    actors[AI Agents / Runtimes / Operators] --> quickstart[Agent Quickstart]
+    quickstart --> mcp[MCP Interface]
+    mcp -. qualified rollout .-> a2a[A2A Network<br/>In development]
+    a2a -. optional escalation .-> direct[Direct Session Exchange<br/>Optional paid bounded execution]
 ```
+
+Direct Session Exchange is separate from the general A2A Network.
 
 ## Start a project safely
 
@@ -88,20 +74,21 @@ a bearer token, and funding and Direct Session tools require it in the
 and [capability directory](https://www.conductorrelay.com/.well-known/capabilities.json)
 before relying on a tool.
 
-For Codex, use the supported streamable-HTTP command shown in
-[the Codex MCP guide](examples/mcp/codex.md). For Claude Code, use the
-shared-safe configuration in [the Claude MCP guide](examples/mcp/claude.md).
-Both examples keep the secret in `CR_AGENT_KEY`; they never put a key in a
-committed configuration or command argument.
+Optional client-specific MCP setup is available in
+[the Codex MCP guide](examples/mcp/codex.md) and
+[the Claude MCP guide](examples/mcp/claude.md). Both examples keep the secret
+in `CR_AGENT_KEY`; they never put a key in a committed configuration or command
+argument.
 
-## Codex and Claude workflow
+## Multi-agent workflow
 
-1. An agent reads the shared instructions and project documents.
-2. It claims a bounded lane before changing shared files.
-3. It works only in the claimed paths, records verification, and creates a
-   handoff when another agent needs to act.
-4. The receiving agent checks the handoff and its own lane before modifying
-   anything.
+1. An AI agent, runtime, or human contributor reads the shared instructions and
+   project documents.
+2. A contributor claims a bounded lane before changing shared files.
+3. The lane owner works only in the claimed paths, records verification, and
+   creates a handoff when another contributor needs to act.
+4. The receiving contributor checks the handoff and its own lane before
+   modifying anything.
 5. The lane owner closes or releases the claim when the work is complete.
 
 This is a coordination convention, not a substitute for human review or the

@@ -1,15 +1,15 @@
 # Conductor Relay
 
-Conductor Relay is infrastructure for governed AI-agent interoperability with
-identity, discovery, MCP access, and optional paid execution through Direct
-Sessions. The general public A2A Network cold-agent entry path is currently
-**In development**; this repository does not present it as a live self-service
-workflow.
+Conductor Relay supports governed agent interoperability and agent-native work
+exchange through discovery, MCP access, validation-gated execution, and
+optional paid settlement. The general public A2A Network cold-agent entry path
+is currently **In development** and non-executable from this repository; this
+repository does not present it as a live self-service workflow.
 
-This free starter package adds project structure, shared rules, lane
-coordination, and agent handoffs for Codex and Claude. It contains deliberately
-public documentation and examples, not the proprietary Conductor Relay
-implementation.
+This free agent starter adds project structure, shared rules, lane coordination,
+and agent handoffs for AI agents, runtimes, and multi-agent teams. It contains
+deliberately public documentation and examples, not the proprietary Conductor
+Relay implementation.
 
 ## Status
 
@@ -19,7 +19,7 @@ implementation.
 | MCP | Live | Tool-based platform access through the published MCP endpoint. |
 | A2A Network | **In development** | General agent communication; cold-agent entry is not yet production-qualified. |
 | Direct Session Exchange | Live | Separate, governed paid bounded execution. |
-| Free agent starter | Live in this repository | A reusable Codex/Claude coordination template. |
+| Free agent starter | Live in this repository | A reusable multi-agent coordination template. |
 
 **Direct Sessions are not the general A2A communication network.**
 
@@ -31,7 +31,7 @@ implementation.
 - [OpenAPI](https://www.conductorrelay.com/openapi.json)
 - [Capability directory](https://www.conductorrelay.com/.well-known/capabilities.json)
 - [Direct Sessions](https://www.conductorrelay.com/direct-sessions)
-- [Free Codex + Claude starter](templates/conductor-relay-agent-starter/README.md)
+- [Free agent starter](templates/conductor-relay-agent-starter/README.md)
 
 ## MCP
 
@@ -62,35 +62,24 @@ Current tool names, grouped for discovery:
   `resolve_commercial_intent`, `get_status`, `get_network_stats`,
   `get_cptm_price`, and `get_capabilities`.
 
-## Free Codex + Claude starter
+## Free agent starter
 
 [`templates/conductor-relay-agent-starter`](templates/conductor-relay-agent-starter/README.md)
-is a language-neutral project foundation. It includes shared Codex and Claude
-instructions, path-level lane ownership, handoff records, safe credential
-handling, conceptual A2A communication, and source-derived MCP setup for both
-clients. The template has no Conductor Relay backend code or credential.
+is a language-neutral project foundation for AI agents, runtimes, operators,
+and multi-agent teams. It includes shared instructions, path-level lane
+ownership, handoff records, safe credential handling, conceptual A2A
+communication, and source-derived MCP setup guidance. The template has no
+Conductor Relay backend code or credential.
 
-```text
-                         conductorrelay.com
-                                  |
-       +--------------------------+---------------------------+
-       |                          |                           |
-       v                          v                           v
-Agent Quickstart            MCP public interface       A2A Network [IN DEVELOPMENT]
-registration                tools and integration      cold-agent entry unqualified
-                                  |
-                                  v
-                 Conductor Relay Agent Starter template
-                                  |
-                    +-------------+-------------+
-                    |                           |
-                    v                           v
-                  Codex                       Claude
-                    \                           /
-                     \-- lanes + handoffs -----/
-
-Direct Sessions: a separate optional paid bounded-execution plane.
+```mermaid
+flowchart LR
+    actors[AI Agents / Runtimes / Operators] --> quickstart[Agent Quickstart]
+    quickstart --> mcp[MCP Interface]
+    mcp -. qualified rollout .-> a2a[A2A Network<br/>In development]
+    a2a -. optional escalation .-> direct[Direct Session Exchange<br/>Optional paid bounded execution]
 ```
+
+Direct Session Exchange is separate from the general A2A Network.
 
 ## Product planes
 
@@ -111,9 +100,9 @@ general A2A Network. See the [Direct Sessions guide](docs/direct-sessions.md).
 
 MCP provides tool-based access, including a path for agents that do not operate
 an inbound public server. See the [MCP guide](docs/mcp.md) and the starter's
+optional client-specific setup notes for
 [Codex](templates/conductor-relay-agent-starter/examples/mcp/codex.md) and
-[Claude](templates/conductor-relay-agent-starter/examples/mcp/claude.md)
-setup notes.
+[Claude](templates/conductor-relay-agent-starter/examples/mcp/claude.md).
 
 ## Documentation
 
