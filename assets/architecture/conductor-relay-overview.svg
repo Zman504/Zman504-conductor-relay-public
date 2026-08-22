@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Conductor Relay public concept overview</title>
+  <desc id="description">Two agents connect to an A2A Network in development. A separate agent or client independently enters the live Direct Session Exchange for paid bounded execution. An MCP client/interface is shown separately.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="100%" stop-color="#12233d"/>
+    </linearGradient>
+    <linearGradient id="relay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#48d8ae"/>
+      <stop offset="100%" stop-color="#4f9cf9"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9fb3ca"/>
+    </marker>
+    <style>
+      .heading { font: 700 42px Arial, Helvetica, sans-serif; letter-spacing: 5px; fill: #ffffff; }
+      .subheading { font: 400 18px Arial, Helvetica, sans-serif; fill: #b6c8df; }
+      .box-title { font: 700 23px Arial, Helvetica, sans-serif; fill: #ffffff; }
+      .box-copy { font: 400 16px Arial, Helvetica, sans-serif; fill: #d5e2f1; }
+      .caption { font: 600 15px Arial, Helvetica, sans-serif; fill: #c6d5e6; letter-spacing: .5px; }
+      .agent { fill: #132840; stroke: #5a789b; stroke-width: 2; }
+      .network { fill: url(#relay); }
+      .direct { fill: #203a5a; stroke: #6b9dd1; stroke-width: 2; }
+      .mcp { fill: #152b3d; stroke: #55c8b1; stroke-width: 2; }
+      .line { fill: none; stroke: #9fb3ca; stroke-width: 3; marker-end: url(#arrow); }
+      .line-dashed { fill: none; stroke: #69cfba; stroke-width: 3; stroke-dasharray: 9 9; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#background)"/>
+  <text x="600" y="78" text-anchor="middle" class="heading">CONDUCTOR RELAY</text>
+  <text x="600" y="112" text-anchor="middle" class="subheading">Governed interoperability infrastructure for AI agents</text>
+
+  <rect x="95" y="225" width="220" height="118" rx="18" class="agent"/>
+  <text x="205" y="272" text-anchor="middle" class="box-title">Agent A</text>
+  <text x="205" y="302" text-anchor="middle" class="box-copy">Communicates</text>
+
+  <rect x="885" y="225" width="220" height="118" rx="18" class="agent"/>
+  <text x="995" y="272" text-anchor="middle" class="box-title">Agent B</text>
+  <text x="995" y="302" text-anchor="middle" class="box-copy">Communicates</text>
+
+  <path d="M 315 284 H 428" class="line"/>
+  <path d="M 885 284 H 772" class="line"/>
+
+  <rect x="430" y="194" width="340" height="180" rx="24" class="network"/>
+  <text x="600" y="260" text-anchor="middle" class="box-title">A2A Network</text>
+  <text x="600" y="294" text-anchor="middle" class="box-copy">Communication · In development</text>
+  <text x="600" y="326" text-anchor="middle" class="box-copy">General agent communication</text>
+
+  <rect x="95" y="470" width="220" height="125" rx="18" class="agent"/>
+  <text x="205" y="520" text-anchor="middle" class="box-title">Agent / client</text>
+  <text x="205" y="552" text-anchor="middle" class="box-copy">Starts a session</text>
+  <path d="M 315 532 H 388" class="line"/>
+
+  <rect x="390" y="470" width="420" height="125" rx="22" class="direct"/>
+  <text x="600" y="520" text-anchor="middle" class="box-title">Direct Session Exchange</text>
+  <text x="600" y="552" text-anchor="middle" class="box-copy">Paid bounded execution · Live</text>
+
+  <rect x="885" y="480" width="220" height="94" rx="18" class="mcp"/>
+  <text x="995" y="519" text-anchor="middle" class="box-title">MCP</text>
+  <text x="995" y="546" text-anchor="middle" class="box-copy">Client / interface</text>
+  <path d="M 885 527 H 812" class="line-dashed"/>
+  <text x="848" y="506" text-anchor="middle" class="caption">public tools</text>
+
+  <text x="600" y="662" text-anchor="middle" class="subheading">Conceptual public overview — live capabilities and limits are authoritative.</text>
+</svg>

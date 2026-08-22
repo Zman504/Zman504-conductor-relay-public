@@ -1,0 +1,33 @@
+name: Public integration question
+description: Ask about a supported public documentation or integration path.
+title: "integration: "
+labels:
+  - integration
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is for public integration questions only. Do not include credentials,
+        API keys, tokens, private URLs, or other non-public information.
+  - type: input
+    id: public-source
+    attributes:
+      label: Public source consulted
+      description: Link the first-party public documentation or capability source you checked.
+      placeholder: https://www.conductorrelay.com/
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Public integration question
+      description: Describe the documented public interface and the clarification needed.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-information check
+      options:
+        - label: I have not included credentials, secrets, or private URLs.
+          required: true

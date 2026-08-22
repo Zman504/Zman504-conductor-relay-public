@@ -1,0 +1,33 @@
+name: Public documentation feedback
+description: Report a correction or clarity issue in Conductor Relay's public documentation.
+title: "docs: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is for public documentation feedback only. Do not include credentials,
+        API keys, tokens, private URLs, or other non-public information.
+  - type: input
+    id: public-source
+    attributes:
+      label: Public source
+      description: Link the first-party public page or document this feedback concerns.
+      placeholder: https://www.conductorrelay.com/
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Documentation feedback
+      description: Describe the public documentation problem and the proposed correction.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-information check
+      options:
+        - label: I have not included credentials, secrets, or private URLs.
+          required: true
