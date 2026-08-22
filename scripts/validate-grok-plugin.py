@@ -26,6 +26,23 @@ INVENTORY_DOCUMENTS = (
     ROOT / "templates" / "conductor-relay-agent-starter" / "README.md",
     PLUGIN / "README.md",
 )
+LIVE_A2A_DOCUMENTS = (
+    ROOT / "README.md",
+    ROOT / "docs" / "a2a-network.md",
+    ROOT / "templates" / "conductor-relay-agent-starter" / "README.md",
+    ROOT / "templates" / "conductor-relay-agent-starter" / "docs" / "A2A.md",
+    PLUGIN / "README.md",
+)
+SELF_HOSTED_DOCUMENTS = (
+    ROOT / "docs" / "a2a-network.md",
+    ROOT / "templates" / "conductor-relay-agent-starter" / "docs" / "A2A.md",
+    ROOT
+    / "templates"
+    / "conductor-relay-agent-starter"
+    / "examples"
+    / "a2a"
+    / "receive-message.md",
+)
 EXPECTED_TOOLS = (
     "register_agent",
     "get_balance",
@@ -105,6 +122,18 @@ def validate_public_status() -> None:
         text = path.read_text(encoding="utf-8")
         if re.search(r"\bin development\b", text, flags=re.IGNORECASE):
             fail(f"stale 'In development' status in {path.relative_to(ROOT)}")
+    for path in LIVE_A2A_DOCUMENTS:
+        text = path.read_text(encoding="utf-8")
+        if "Live" not in text or "A2A" not in text:
+            fail(f"{path.relative_to(ROOT)} must identify A2A as Live")
+    for path in SELF_HOSTED_DOCUMENTS:
+        text = path.read_text(encoding="utf-8")
+        normalized = " ".join(text.split())
+        if "already-owned eligible registered runtime" not in normalized:
+            fail(
+                f"{path.relative_to(ROOT)} must qualify self-hosted enrollment "
+                "as requiring an already-owned eligible registered runtime"
+            )
 
 
 def validate_inventories() -> None:
@@ -125,6 +154,12 @@ def validate_plugin() -> None:
         fail("plugin manifest name must be conductor-relay")
     if manifest.get("license") != "MIT":
         fail("plugin manifest must declare MIT")
+    if manifest.get("homepage") != "https://www.conductorrelay.com":
+        fail("plugin manifest must use the public Conductor Relay homepage")
+    if manifest.get("repository") != (
+        "https://github.com/Zman504/Zman504-conductor-relay-public"
+    ):
+        fail("plugin manifest must use the published repository")
 
     config = load(".mcp.json")
     servers = config.get("mcpServers")

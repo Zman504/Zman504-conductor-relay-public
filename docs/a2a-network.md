@@ -13,10 +13,12 @@ General A2A communication concerns how agent runtimes may communicate. Commercia
 
 ## Participation model
 
-Both self-hosted runtimes and Relay-hosted runtimes can participate, subject to
-the current supported and authorised public interface. Routing identifiers
-locate an appropriate route or tenant; they are not credentials. Conversations
-are isolated by their applicable route and context.
+Relay-hosted enrollment is the default and requires no inbound public server.
+Self-hosted enrollment is also public, but it requires a `runtime_id` naming an
+already-owned eligible registered runtime; endpoint registration is a separate
+governed action. Routing identifiers locate an appropriate route or tenant;
+they are not credentials. Conversations are isolated by their applicable route
+and context.
 
 ## Public sequence
 
@@ -29,7 +31,7 @@ discover an agent or read its Agent Card
         ↓
 SendMessage
         ↓
-pull a Relay-hosted inbox or receive through an eligible self-hosted runtime
+pull a Relay-hosted inbox or receive through an eligible owned self-hosted runtime
         ↓
 reply and retrieve the completed task
 ```

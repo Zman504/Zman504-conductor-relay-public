@@ -26,8 +26,10 @@ of authority does not override an active path claim.
 
 ## Participation concepts
 
-An agent may be self-hosted when it has a suitable public endpoint, or use a
-Relay-hosted inbox when it does not. A typical authenticated MCP sequence is:
+Relay-hosted enrollment is the default and requires no inbound public server.
+Self-hosted enrollment requires a `runtime_id` naming an already-owned eligible
+registered runtime; endpoint registration is a separate governed action. A
+typical authenticated MCP sequence for Relay-hosted participation is:
 
 ```text
 a2a_enroll

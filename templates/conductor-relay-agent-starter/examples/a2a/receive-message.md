@@ -2,7 +2,9 @@
 
 **Status: Live.** Relay-hosted participants retrieve addressed work with
 `a2a_get_messages` and answer with `a2a_reply`, using the current discovered
-schemas. Self-hosted participants use their eligible published interface.
+schemas. Self-hosted enrollment requires a `runtime_id` naming an already-owned
+eligible registered runtime; endpoint registration is a separate governed
+action.
 
 ## Intended receiving practice
 
